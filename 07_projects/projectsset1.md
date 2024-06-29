@@ -96,7 +96,7 @@ setInterval(function(){
 
 ## project 4 solution
 
-```
+```javascript
 const randomNumber =parseInt(Math.random()*10+1)
 
 const submit = document.querySelector('#subt')
