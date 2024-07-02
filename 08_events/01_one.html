@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html Events</title>
+</head>
+<body style="background-color: darkslategray; color: #fff;">
+<div>
+    <ul id="images">
+        <li><img width="200px" height="200" id="window" src="https://images.pexels.com/photos/26617740/pexels-photo-26617740/free-photo-of-pencere.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="window" </li>
+        <li><img width="200px" height="200" id="japan" src="https://images.pexels.com/photos/15940451/pexels-photo-15940451/free-photo-of-clouds-over-beach.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="japan" </li>
+        <li><img width="200px" height="200" id="sea" src="https://images.pexels.com/photos/26548174/pexels-photo-26548174/free-photo-of-woman-sitting-with-eyes-closed-on-seashore.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="sea"  </li>
+        <li><img width="200px" height="200" id="beach" src="https://images.pexels.com/photos/26076624/pexels-photo-26076624/free-photo-of-beach-umbrella-and-chair-on-copacabana-beach-on-seashore-in-rio-de-janeiro.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="beach" </li>
+        <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</div>
+</body>
+<script>
+    // document.getElementById('sea').onclick =function(){
+    //     alert("owl clicked")
+    // }
+
+    
+    //  type, timestamp, defaultPrevented
+    // target, toElement, srcElement, currentTarget,
+    // clientX, clientY, screenX, screenY
+    // atlkey, ctrlkey, shiftkey, keyCode
+    
+    
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     // alert("click inside the ul")
+    //     console.log("click inside the ul");
+    // },false)
+
+    // document.getElementById('sea').addEventListener('click', function(e){
+    //     // alert("sea clicked")
+    //     console.log("sea clicked");
+    //     e.stopPropagation()
+    // },false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault()
+    //     e.stopPropagation()
+    //     console.log("google clicked");
+    // })
+
+    document.querySelector('#images').addEventListener
+    ('click', function(e){
+        console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id)
+            let removeIt = e.target.parentNode
+        removeIt.remove()
+        }
+        
+
+        // removeIt.parentNode.removeChild(removeIt)
+        // isko bhi use kr skte hai
+    })
+
+    // jab false hota hai --- bubling me ye hota hai ki jb ham andr vale event ko krte hai to pphle undr vala hi work kre ga fhir bahar vala kre ga
+    // jab true hota hai to --- phle outside vala work krta hai fir inside vala
+
+
+
+
+
+
+
+// attachEvent() -------ye old time pe use krte the
+// jquery - onEvent listener -------ye bhi old time pe use krte the
+
+</script>
+</html>
